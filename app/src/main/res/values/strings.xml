@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">مدیریت مدرسه (والدین)</string>
+    <string-array name="examples">
+        <item>---</item>
+        <item>---</item>
+    </string-array>
+    <string-array name="examples1">
+        <item>فراخوانی موجود نیست</item>
+    </string-array>
+    <string name="prompet">ماه را انتخاب کنید</string>
+
+
+    <string-array name="month_arrays">
+        <item>مهر</item>
+        <item>آبان</item>
+        <item>آذر</item>
+        <item>دی</item>
+        <item>بهمن</item>
+        <item>اسفند</item>
+        <item>فروردین</item>
+        <item>اردیبهشت</item>
+        <item>خرداد</item>
+    </string-array>
+
+</resources>

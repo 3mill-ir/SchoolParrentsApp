@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hezare.mmv">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-sdk
+        tools:overrideLibrary="co.ronash.pushe" />
+    <permission
+        android:name="com.hezare.mmv.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission
+        android:name="com.hezare.mmv.permission.C2D_MESSAGE" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/logosolda"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Login" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Elanat"/>
+        <activity android:name=".ClassGradeMain"/>
+        <activity android:name=".ClassGradeDetails"/>
+        <activity android:name=".ElanatDetails"/>
+        <activity android:name=".Takalif"/>
+        <activity android:name=".HozorGeyab"/>
+        <activity android:name=".Tashvig"/>
+        <activity android:name=".About"/>
+        <activity android:name=".Chat"/>
+        <activity android:name=".Karname"/>
+        <activity android:name=".Mali"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Forget" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ChatMain.ChatActivity"
+            android:label="Chat"
+            android:windowSoftInputMode="adjustResize"  android:screenOrientation="portrait" />
+
+
+
+
+        <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data
+                    android:path="com.hezare.mmv"
+                    android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.hezare.mmv" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_60742386987"/>
+        <meta-data android:name="co.ronash.pushe.cr" android:value="aHR0cDovL2MwMTIzZTIwYTQ3MjQ0NThhN2U3ZmYxZTBiMjk0ZmJkOjBmMDgwYThlMTRiMzRkYjQ5NTg1YTg2MGRmOWRjM2RhQGNhLnB1c2hlLmlyLzEwNjE1"/>
+        <service
+            android:name=".MyPushListener"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="co.ronash.pushe.RECEIVE" />
+            </intent-filter>
+        </service>
+
+
+    </application>
+
+</manifest>

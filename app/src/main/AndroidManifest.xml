@@ -26,6 +26,8 @@
         android:label="@string/app_name"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
+
+        <service android:name=".Utils.DownloadService" />
         <activity android:name=".Login" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +51,8 @@
         <activity
             android:name=".ChatMain.ChatActivity"
             android:label="Chat"
-            android:windowSoftInputMode="adjustResize"  android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
 
 
 
